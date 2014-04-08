@@ -1,0 +1,4 @@
+# Updated 2/8/14 5:15 AM by Minecraft 1.7.4
+# victim name | ban date | banned by | banned until | reason
+
+GrimioreShade|2014-02-08 05:15:15 +0000|(Unknown)|Forever|Death in Hardcore

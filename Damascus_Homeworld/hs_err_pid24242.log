@@ -1,0 +1,871 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 51380224 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2761), pid=24242, tid=140314377799424
+#
+# JRE version: OpenJDK Runtime Environment (7.0_51) (build 1.7.0_51-b00)
+# Java VM: OpenJDK 64-Bit Server VM (24.45-b08 mixed mode linux-amd64 compressed oops)
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f9d780f6000):  VMThread [stack: 0x00007f9d7c954000,0x00007f9d7ca55000] [id=24246]
+
+Stack: [0x00007f9d7c954000,0x00007f9d7ca55000],  sp=0x00007f9d7ca534c0,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x917e69]  JVM_handle_linux_signal+0x1778f9
+V  [libjvm.so+0x467d44]  dlerror+0x467d44
+V  [libjvm.so+0x79a983]  JVM_FindSignal+0x18cf13
+V  [libjvm.so+0x79534f]  JVM_FindSignal+0x1878df
+V  [libjvm.so+0x80562b]  JVM_handle_linux_signal+0x650bb
+V  [libjvm.so+0x7f540b]  JVM_handle_linux_signal+0x54e9b
+V  [libjvm.so+0x7f55cb]  JVM_handle_linux_signal+0x5505b
+V  [libjvm.so+0x7f64f8]  JVM_handle_linux_signal+0x55f88
+V  [libjvm.so+0x7fd543]  JVM_handle_linux_signal+0x5cfd3
+V  [libjvm.so+0x80376d]  JVM_handle_linux_signal+0x631fd
+V  [libjvm.so+0x7b9d13]  JVM_handle_linux_signal+0x197a3
+V  [libjvm.so+0x919884]  JVM_handle_linux_signal+0x179314
+V  [libjvm.so+0x91ded7]  JVM_handle_linux_signal+0x17d967
+V  [libjvm.so+0x91c8a8]  JVM_handle_linux_signal+0x17c338
+V  [libjvm.so+0x91cd09]  JVM_handle_linux_signal+0x17c799
+V  [libjvm.so+0x91d152]  JVM_handle_linux_signal+0x17cbe2
+V  [libjvm.so+0x7976b2]  JVM_FindSignal+0x189c42
+
+VM_Operation (0x00007f9d680f8820): ParallelGCFailedAllocation, mode: safepoint, requested by thread 0x00007f9d3ad03800
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f9d381da000 JavaThread "pool-2-thread-2" [_thread_blocked, id=24305, stack(0x00007f9d309c9000,0x00007f9d30aca000)]
+  0x00007f9d381dc800 JavaThread "pool-2-thread-1" [_thread_blocked, id=24299, stack(0x00007f9d68711000,0x00007f9d68812000)]
+  0x00007f9d381d6800 JavaThread "File IO Thread" [_thread_blocked, id=24297, stack(0x00007f9d30ccc000,0x00007f9d30dcd000)]
+  0x00007f9d3ad6b000 JavaThread "Thread-23" [_thread_blocked, id=24294, stack(0x00007f9d33eff000,0x00007f9d34000000)]
+  0x00007f9d3ad03800 JavaThread "Thread-21" [_thread_blocked, id=24291, stack(0x00007f9d6800a000,0x00007f9d6810b000)]
+  0x00007f9d3a297800 JavaThread "LogisticsPipes RoutingTableUpdateThread #3" daemon [_thread_blocked, id=24285, stack(0x00007f9d6820c000,0x00007f9d6830d000)]
+  0x00007f9d3a296000 JavaThread "LogisticsPipes RoutingTableUpdateThread #2" daemon [_thread_blocked, id=24284, stack(0x00007f9d6830d000,0x00007f9d6840e000)]
+  0x00007f9d3a294800 JavaThread "LogisticsPipes RoutingTableUpdateThread #1" daemon [_thread_blocked, id=24283, stack(0x00007f9d6840e000,0x00007f9d6850f000)]
+  0x00007f9d3a28c800 JavaThread "LogisticsPipes RoutingTableUpdateThread #0" daemon [_thread_blocked, id=24282, stack(0x00007f9d6850f000,0x00007f9d68610000)]
+  0x00007f9d3a28b800 JavaThread "LogisticsPipes Packet Decompressor Server" daemon [_thread_blocked, id=24281, stack(0x00007f9d68610000,0x00007f9d68711000)]
+  0x00007f9d3a289000 JavaThread "LogisticsPipes Packet Compressor Server" daemon [_thread_blocked, id=24280, stack(0x00007f9d68812000,0x00007f9d68913000)]
+  0x00007f9d399f8000 JavaThread "Listen thread" [_thread_in_native, id=24273, stack(0x00007f9d68913000,0x00007f9d68a14000)]
+  0x00007f9d38001800 JavaThread "Thread-5" daemon [_thread_in_native, id=24259, stack(0x00007f9d68f37000,0x00007f9d69038000)]
+  0x00007f9d78008800 JavaThread "DestroyJavaVM" [_thread_blocked, id=24243, stack(0x00007f9d810bb000,0x00007f9d811bc000)]
+  0x00007f9d7866b000 JavaThread "Server thread" [_thread_blocked, id=24258, stack(0x00007f9d69038000,0x00007f9d69139000)]
+  0x00007f9d7864c000 JavaThread "Thread-3" daemon [_thread_blocked, id=24257, stack(0x00007f9d69139000,0x00007f9d6923a000)]
+  0x00007f9d78654800 JavaThread "Snooper Timer" daemon [_thread_blocked, id=24256, stack(0x00007f9d6923a000,0x00007f9d6933b000)]
+  0x00007f9d78293800 JavaThread "Thread-1" daemon [_thread_blocked, id=24254, stack(0x00007f9d6b583000,0x00007f9d6b684000)]
+  0x00007f9d78125800 JavaThread "Service Thread" daemon [_thread_blocked, id=24252, stack(0x00007f9d7c34e000,0x00007f9d7c44f000)]
+  0x00007f9d78123800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=24251, stack(0x00007f9d7c44f000,0x00007f9d7c550000)]
+  0x00007f9d78120800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=24250, stack(0x00007f9d7c550000,0x00007f9d7c651000)]
+  0x00007f9d7811e800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=24249, stack(0x00007f9d7c651000,0x00007f9d7c752000)]
+  0x00007f9d780fc800 JavaThread "Finalizer" daemon [_thread_blocked, id=24248, stack(0x00007f9d7c752000,0x00007f9d7c853000)]
+  0x00007f9d780fa800 JavaThread "Reference Handler" daemon [_thread_blocked, id=24247, stack(0x00007f9d7c853000,0x00007f9d7c954000)]
+
+Other Threads:
+=>0x00007f9d780f6000 VMThread [stack: 0x00007f9d7c954000,0x00007f9d7ca55000] [id=24246]
+  0x00007f9d78130800 WatcherThread [stack: 0x00007f9d7c24d000,0x00007f9d7c34e000] [id=24253]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007f9d78005a90] ExpandHeap_lock - owner thread: 0x00007f9d780f6000
+[0x00007f9d78006110] Threads_lock - owner thread: 0x00007f9d780f6000
+[0x00007f9d78006610] Heap_lock - owner thread: 0x00007f9d3ad03800
+
+Heap
+ PSYoungGen      total 657408K, used 0K [0x00000007d6500000, 0x0000000800000000, 0x0000000800000000)
+  eden space 631808K, 0% used [0x00000007d6500000,0x00000007d6500000,0x00000007fce00000)
+  from space 25600K, 0% used [0x00000007fce00000,0x00000007fce00000,0x00000007fe700000)
+  to   space 25600K, 0% used [0x00000007fe700000,0x00000007fe700000,0x0000000800000000)
+ ParOldGen       total 753152K, used 452262K [0x0000000783000000, 0x00000007b0f80000, 0x00000007d6500000)
+  object space 753152K, 60% used [0x0000000783000000,0x000000079e9a9b28,0x00000007b0f80000)
+ PSPermGen       total 131072K, used 96434K [0x0000000778a00000, 0x0000000780a00000, 0x0000000783000000)
+  object space 131072K, 73% used [0x0000000778a00000,0x000000077e82c900,0x0000000780a00000)
+
+Card table byte_map: [0x00007f9d7df50000,0x00007f9d7e38c000] byte_map_base: 0x00007f9d7a38b000
+
+Polling page: 0x00007f9d811cc000
+
+Code Cache  [0x00007f9d75000000, 0x00007f9d76020000, 0x00007f9d78000000)
+ total_blobs=6070 nmethods=5212 adapters=807 free_code_cache=33007Kb largest_free_block=33482496
+
+Compilation events (10 events):
+Event: 108599.777 Thread 0x00007f9d78123800 6141             net.minecraft.entity.ai.attributes.BaseAttributeMap::func_111148_a (71 bytes)
+Event: 108599.907 Thread 0x00007f9d78123800 nmethod 6141 0x00007f9d75f87190 code [0x00007f9d75f874c0, 0x00007f9d75f88490]
+Event: 111434.785 Thread 0x00007f9d78120800 6142             net.minecraft.village.MerchantRecipeList::func_77202_a (62 bytes)
+Event: 111434.834 Thread 0x00007f9d78120800 nmethod 6142 0x00007f9d758dc510 code [0x00007f9d758dc720, 0x00007f9d758dd008]
+Event: 112482.406 Thread 0x00007f9d78123800 6143             java.security.AccessControlContext::optimize (319 bytes)
+Event: 112482.436 Thread 0x00007f9d78123800 nmethod 6143 0x00007f9d75937610 code [0x00007f9d759377a0, 0x00007f9d75937e48]
+Event: 118680.172 Thread 0x00007f9d78120800 6144             codechicken.multipart.scalatraits.TRedstoneTile$class::openConnections (56 bytes)
+Event: 118680.180 Thread 0x00007f9d78120800 nmethod 6144 0x00007f9d758dc090 code [0x00007f9d758dc200, 0x00007f9d758dc350]
+Event: 123439.633 Thread 0x00007f9d78123800 6145             sun.util.PreHashedMap::get (73 bytes)
+Event: 123439.716 Thread 0x00007f9d78123800 nmethod 6145 0x00007f9d75c40bd0 code [0x00007f9d75c40d60, 0x00007f9d75c411f8]
+
+GC Heap History (10 events):
+Event: 124753.337 GC heap after
+Heap after GC invocations=2575 (full 14):
+ PSYoungGen      total 659968K, used 16818K [0x00000007d6500000, 0x00000007fff00000, 0x0000000800000000)
+  eden space 637952K, 0% used [0x00000007d6500000,0x00000007d6500000,0x00000007fd400000)
+  from space 22016K, 76% used [0x00000007fd400000,0x00000007fe46cbc0,0x00000007fe980000)
+  to   space 21504K, 0% used [0x00000007fea00000,0x00000007fea00000,0x00000007fff00000)
+ ParOldGen       total 753152K, used 731212K [0x0000000783000000, 0x00000007b0f80000, 0x00000007d6500000)
+  object space 753152K, 97% used [0x0000000783000000,0x00000007afa13338,0x00000007b0f80000)
+ PSPermGen       total 131072K, used 96434K [0x0000000778a00000, 0x0000000780a00000, 0x0000000783000000)
+  object space 131072K, 73% used [0x0000000778a00000,0x000000077e82caa0,0x0000000780a00000)
+}
+Event: 124812.311 GC heap before
+{Heap before GC invocations=2576 (full 14):
+ PSYoungGen      total 659968K, used 654770K [0x00000007d6500000, 0x00000007fff00000, 0x0000000800000000)
+  eden space 637952K, 100% used [0x00000007d6500000,0x00000007fd400000,0x00000007fd400000)
+  from space 22016K, 76% used [0x00000007fd400000,0x00000007fe46cbc0,0x00000007fe980000)
+  to   space 21504K, 0% used [0x00000007fea00000,0x00000007fea00000,0x00000007fff00000)
+ ParOldGen       total 753152K, used 731212K [0x0000000783000000, 0x00000007b0f80000, 0x00000007d6500000)
+  object space 753152K, 97% used [0x0000000783000000,0x00000007afa13338,0x00000007b0f80000)
+ PSPermGen       total 131072K, used 96434K [0x0000000778a00000, 0x0000000780a00000, 0x0000000783000000)
+  object space 131072K, 73% used [0x0000000778a00000,0x000000077e82caa0,0x0000000780a00000)
+Event: 124812.357 GC heap after
+Heap after GC invocations=2576 (full 14):
+ PSYoungGen      total 660480K, used 16850K [0x00000007d6500000, 0x00000007ffe80000, 0x0000000800000000)
+  eden space 639488K, 0% used [0x00000007d6500000,0x00000007d6500000,0x00000007fd580000)
+  from space 20992K, 80% used [0x00000007fea00000,0x00000007ffa74bc0,0x00000007ffe80000)
+  to   space 20992K, 0% used [0x00000007fd580000,0x00000007fd580000,0x00000007fea00000)
+ ParOldGen       total 753152K, used 731228K [0x0000000783000000, 0x00000007b0f80000, 0x00000007d6500000)
+  object space 753152K, 97% used [0x0000000783000000,0x00000007afa17338,0x00000007b0f80000)
+ PSPermGen       total 131072K, used 96434K [0x0000000778a00000, 0x0000000780a00000, 0x0000000783000000)
+  object space 131072K, 73% used [0x0000000778a00000,0x000000077e82caa0,0x0000000780a00000)
+}
+Event: 124874.737 GC heap before
+{Heap before GC invocations=2577 (full 14):
+ PSYoungGen      total 660480K, used 656338K [0x00000007d6500000, 0x00000007ffe80000, 0x0000000800000000)
+  eden space 639488K, 100% used [0x00000007d6500000,0x00000007fd580000,0x00000007fd580000)
+  from space 20992K, 80% used [0x00000007fea00000,0x00000007ffa74bc0,0x00000007ffe80000)
+  to   space 20992K, 0% used [0x00000007fd580000,0x00000007fd580000,0x00000007fea00000)
+ ParOldGen       total 753152K, used 731228K [0x0000000783000000, 0x00000007b0f80000, 0x00000007d6500000)
+  object space 753152K, 97% used [0x0000000783000000,0x00000007afa17338,0x00000007b0f80000)
+ PSPermGen       total 131072K, used 96434K [0x0000000778a00000, 0x0000000780a00000, 0x0000000783000000)
+  object space 131072K, 73% used [0x0000000778a00000,0x000000077e82caa0,0x0000000780a00000)
+Event: 124874.765 GC heap after
+Heap after GC invocations=2577 (full 14):
+ PSYoungGen      total 660480K, used 16530K [0x00000007d6500000, 0x0000000800000000, 0x0000000800000000)
+  eden space 639488K, 0% used [0x00000007d6500000,0x00000007d6500000,0x00000007fd580000)
+  from space 20992K, 78% used [0x00000007fd580000,0x00000007fe5a4bc0,0x00000007fea00000)
+  to   space 20992K, 0% used [0x00000007feb80000,0x00000007feb80000,0x0000000800000000)
+ ParOldGen       total 753152K, used 731244K [0x0000000783000000, 0x00000007b0f80000, 0x00000007d6500000)
+  object space 753152K, 97% used [0x0000000783000000,0x00000007afa1b338,0x00000007b0f80000)
+ PSPermGen       total 131072K, used 96434K [0x0000000778a00000, 0x0000000780a00000, 0x0000000783000000)
+  object space 131072K, 73% used [0x0000000778a00000,0x000000077e82caa0,0x0000000780a00000)
+}
+Event: 124935.290 GC heap before
+{Heap before GC invocations=2578 (full 14):
+ PSYoungGen      total 660480K, used 656018K [0x00000007d6500000, 0x0000000800000000, 0x0000000800000000)
+  eden space 639488K, 100% used [0x00000007d6500000,0x00000007fd580000,0x00000007fd580000)
+  from space 20992K, 78% used [0x00000007fd580000,0x00000007fe5a4bc0,0x00000007fea00000)
+  to   space 20992K, 0% used [0x00000007feb80000,0x00000007feb80000,0x0000000800000000)
+ ParOldGen       total 753152K, used 731244K [0x0000000783000000, 0x00000007b0f80000, 0x00000007d6500000)
+  object space 753152K, 97% used [0x0000000783000000,0x00000007afa1b338,0x00000007b0f80000)
+ PSPermGen       total 131072K, used 96434K [0x0000000778a00000, 0x0000000780a00000, 0x0000000783000000)
+  object space 131072K, 73% used [0x0000000778a00000,0x000000077e82caa0,0x0000000780a00000)
+Event: 124935.371 GC heap after
+Heap after GC invocations=2578 (full 14):
+ PSYoungGen      total 652800K, used 20978K [0x00000007d6500000, 0x0000000800000000, 0x0000000800000000)
+  eden space 631808K, 0% used [0x00000007d6500000,0x00000007d6500000,0x00000007fce00000)
+  from space 20992K, 99% used [0x00000007feb80000,0x00000007ffffcbc0,0x0000000800000000)
+  to   space 25600K, 0% used [0x00000007fce00000,0x00000007fce00000,0x00000007fe700000)
+ ParOldGen       total 753152K, used 741326K [0x0000000783000000, 0x00000007b0f80000, 0x00000007d6500000)
+  object space 753152K, 98% used [0x0000000783000000,0x00000007b03f3ad8,0x00000007b0f80000)
+ PSPermGen       total 131072K, used 96434K [0x0000000778a00000, 0x0000000780a00000, 0x0000000783000000)
+  object space 131072K, 73% used [0x0000000778a00000,0x000000077e82caa0,0x0000000780a00000)
+}
+Event: 124994.645 GC heap before
+{Heap before GC invocations=2579 (full 14):
+ PSYoungGen      total 652800K, used 652786K [0x00000007d6500000, 0x0000000800000000, 0x0000000800000000)
+  eden space 631808K, 100% used [0x00000007d6500000,0x00000007fce00000,0x00000007fce00000)
+  from space 20992K, 99% used [0x00000007feb80000,0x00000007ffffcbc0,0x0000000800000000)
+  to   space 25600K, 0% used [0x00000007fce00000,0x00000007fce00000,0x00000007fe700000)
+ ParOldGen       total 753152K, used 741326K [0x0000000783000000, 0x00000007b0f80000, 0x00000007d6500000)
+  object space 753152K, 98% used [0x0000000783000000,0x00000007b03f3ad8,0x00000007b0f80000)
+ PSPermGen       total 131072K, used 96434K [0x0000000778a00000, 0x0000000780a00000, 0x0000000783000000)
+  object space 131072K, 73% used [0x0000000778a00000,0x000000077e82caa0,0x0000000780a00000)
+Event: 124994.773 GC heap after
+Heap after GC invocations=2579 (full 14):
+ PSYoungGen      total 657408K, used 25599K [0x00000007d6500000, 0x0000000800000000, 0x0000000800000000)
+  eden space 631808K, 0% used [0x00000007d6500000,0x00000007d6500000,0x00000007fce00000)
+  from space 25600K, 99% used [0x00000007fce00000,0x00000007fe6fff20,0x00000007fe700000)
+  to   space 25600K, 0% used [0x00000007fe700000,0x00000007fe700000,0x0000000800000000)
+ ParOldGen       total 753152K, used 749108K [0x0000000783000000, 0x00000007b0f80000, 0x00000007d6500000)
+  object space 753152K, 99% used [0x0000000783000000,0x00000007b0b8d268,0x00000007b0f80000)
+ PSPermGen       total 131072K, used 96434K [0x0000000778a00000, 0x0000000780a00000, 0x0000000783000000)
+  object space 131072K, 73% used [0x0000000778a00000,0x000000077e82caa0,0x0000000780a00000)
+}
+Event: 124994.779 GC heap before
+{Heap before GC invocations=2580 (full 15):
+ PSYoungGen      total 657408K, used 25599K [0x00000007d6500000, 0x0000000800000000, 0x0000000800000000)
+  eden space 631808K, 0% used [0x00000007d6500000,0x00000007d6500000,0x00000007fce00000)
+  from space 25600K, 99% used [0x00000007fce00000,0x00000007fe6fff20,0x00000007fe700000)
+  to   space 25600K, 0% used [0x00000007fe700000,0x00000007fe700000,0x0000000800000000)
+ ParOldGen       total 753152K, used 749108K [0x0000000783000000, 0x00000007b0f80000, 0x00000007d6500000)
+  object space 753152K, 99% used [0x0000000783000000,0x00000007b0b8d268,0x00000007b0f80000)
+ PSPermGen       total 131072K, used 96434K [0x0000000778a00000, 0x0000000780a00000, 0x0000000783000000)
+  object space 131072K, 73% used [0x0000000778a00000,0x000000077e82caa0,0x0000000780a00000)
+
+Deoptimization events (10 events):
+Event: 51212.762 Thread 0x00007f9d7866b000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f9d75666940 method=net.minecraft.entity.ai.EntityAIAttackOnCollide.func_75250_a()Z @ 15
+Event: 51212.762 Thread 0x00007f9d7866b000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f9d75666940 method=net.minecraft.entity.ai.EntityAIAttackOnCollide.func_75250_a()Z @ 15
+Event: 51212.762 Thread 0x00007f9d7866b000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f9d75c0a6f8 method=net.minecraft.entity.ai.EntityLookHelper.func_75651_a(Lnet/minecraft/entity/Entity;FF)V @ 9
+Event: 51212.824 Thread 0x00007f9d7866b000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f9d75c0a6f8 method=net.minecraft.entity.ai.EntityLookHelper.func_75651_a(Lnet/minecraft/entity/Entity;FF)V @ 9
+Event: 51212.867 Thread 0x00007f9d7866b000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f9d75c0a6f8 method=net.minecraft.entity.ai.EntityLookHelper.func_75651_a(Lnet/minecraft/entity/Entity;FF)V @ 9
+Event: 51637.821 Thread 0x00007f9d7866b000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f9d75f45414 method=tconstruct.blocks.OreberryBush.func_71869_a(Lnet/minecraft/world/World;IIILnet/minecraft/entity/Entity;)V @ 14
+Event: 51637.873 Thread 0x00007f9d7866b000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f9d75f45414 method=tconstruct.blocks.OreberryBush.func_71869_a(Lnet/minecraft/world/World;IIILnet/minecraft/entity/Entity;)V @ 14
+Event: 51638.169 Thread 0x00007f9d7866b000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f9d75f45414 method=tconstruct.blocks.OreberryBush.func_71869_a(Lnet/minecraft/world/World;IIILnet/minecraft/entity/Entity;)V @ 14
+Event: 51638.219 Thread 0x00007f9d7866b000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f9d75f45414 method=tconstruct.blocks.OreberryBush.func_71869_a(Lnet/minecraft/world/World;IIILnet/minecraft/entity/Entity;)V @ 14
+Event: 51859.414 Thread 0x00007f9d7866b000 Uncommon trap: reason=unreached action=reinterpret pc=0x00007f9d757476d8 method=java.util.HashMap.removeEntryForKey(Ljava/lang/Object;)Ljava/util/HashMap$Entry; @ 10
+
+Internal exceptions (10 events):
+Event: 124989.637 Thread 0x00007f9d3ad03800 Threw 0x00000007fa51db90 at /build/java7-openjdk/src/icedtea-2.4.4/openjdk/hotspot/src/share/vm/prims/jni.cpp:743
+Event: 124990.138 Thread 0x00007f9d3ad03800 Threw 0x00000007fa51dd08 at /build/java7-openjdk/src/icedtea-2.4.4/openjdk/hotspot/src/share/vm/prims/jni.cpp:743
+Event: 124990.639 Thread 0x00007f9d3ad03800 Threw 0x00000007fa51de80 at /build/java7-openjdk/src/icedtea-2.4.4/openjdk/hotspot/src/share/vm/prims/jni.cpp:743
+Event: 124991.139 Thread 0x00007f9d3ad03800 Threw 0x00000007fa51dff8 at /build/java7-openjdk/src/icedtea-2.4.4/openjdk/hotspot/src/share/vm/prims/jni.cpp:743
+Event: 124991.640 Thread 0x00007f9d3ad03800 Threw 0x00000007fa51e170 at /build/java7-openjdk/src/icedtea-2.4.4/openjdk/hotspot/src/share/vm/prims/jni.cpp:743
+Event: 124992.140 Thread 0x00007f9d3ad03800 Threw 0x00000007fa51e2b0 at /build/java7-openjdk/src/icedtea-2.4.4/openjdk/hotspot/src/share/vm/prims/jni.cpp:743
+Event: 124992.641 Thread 0x00007f9d3ad03800 Threw 0x00000007fbc94198 at /build/java7-openjdk/src/icedtea-2.4.4/openjdk/hotspot/src/share/vm/prims/jni.cpp:743
+Event: 124993.142 Thread 0x00007f9d3ad03800 Threw 0x00000007fbc94310 at /build/java7-openjdk/src/icedtea-2.4.4/openjdk/hotspot/src/share/vm/prims/jni.cpp:743
+Event: 124993.642 Thread 0x00007f9d3ad03800 Threw 0x00000007fbc94488 at /build/java7-openjdk/src/icedtea-2.4.4/openjdk/hotspot/src/share/vm/prims/jni.cpp:743
+Event: 124994.143 Thread 0x00007f9d3ad03800 Threw 0x00000007fbc94600 at /build/java7-openjdk/src/icedtea-2.4.4/openjdk/hotspot/src/share/vm/prims/jni.cpp:743
+
+Events (10 events):
+Event: 124964.877 Thread 0x00007f9d40006800 Thread exited: 0x00007f9d40006800
+Event: 124979.810 Thread 0x00007f9d78543000 Thread added: 0x00007f9d78543000
+Event: 124984.818 Executing VM operation: RevokeBias
+Event: 124984.822 Executing VM operation: RevokeBias done
+Event: 124984.822 Executing VM operation: RevokeBias
+Event: 124984.822 Executing VM operation: RevokeBias done
+Event: 124984.823 Executing VM operation: RevokeBias
+Event: 124984.823 Executing VM operation: RevokeBias done
+Event: 124984.823 Thread 0x00007f9d78543000 Thread exited: 0x00007f9d78543000
+Event: 124994.644 Executing VM operation: ParallelGCFailedAllocation
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 fe:00 3464                               /usr/lib/jvm/java-7-openjdk/jre/bin/java
+00600000-00601000 rw-p 00000000 fe:00 3464                               /usr/lib/jvm/java-7-openjdk/jre/bin/java
+021b0000-02217000 rw-p 00000000 00:00 0                                  [heap]
+778a00000-780a00000 rw-p 00000000 00:00 0 
+780a00000-783000000 rw-p 00000000 00:00 0 
+783000000-7b0f80000 rw-p 00000000 00:00 0 
+7b4080000-7d6500000 rw-p 00000000 00:00 0 
+7d6500000-800000000 rw-p 00000000 00:00 0 
+7f9d2c000000-7f9d2cc7e000 rw-p 00000000 00:00 0 
+7f9d2cc7e000-7f9d30000000 ---p 00000000 00:00 0 
+7f9d303c3000-7f9d303c6000 ---p 00000000 00:00 0 
+7f9d303c6000-7f9d304c4000 rw-p 00000000 00:00 0 
+7f9d304c4000-7f9d304c7000 ---p 00000000 00:00 0 
+7f9d304c7000-7f9d305c5000 rw-p 00000000 00:00 0 
+7f9d305c5000-7f9d305c8000 ---p 00000000 00:00 0 
+7f9d305c8000-7f9d306c6000 rw-p 00000000 00:00 0 
+7f9d306c6000-7f9d306c9000 ---p 00000000 00:00 0 
+7f9d306c9000-7f9d307c7000 rw-p 00000000 00:00 0 
+7f9d307c7000-7f9d307ca000 ---p 00000000 00:00 0 
+7f9d307ca000-7f9d308c8000 rw-p 00000000 00:00 0 
+7f9d308c8000-7f9d308cb000 ---p 00000000 00:00 0 
+7f9d308cb000-7f9d309c9000 rw-p 00000000 00:00 0 
+7f9d309c9000-7f9d309cc000 ---p 00000000 00:00 0 
+7f9d309cc000-7f9d30aca000 rw-p 00000000 00:00 0                          [stack:24305]
+7f9d30aca000-7f9d30acd000 ---p 00000000 00:00 0 
+7f9d30acd000-7f9d30bcb000 rw-p 00000000 00:00 0 
+7f9d30bcb000-7f9d30bce000 ---p 00000000 00:00 0 
+7f9d30bce000-7f9d30ccc000 rw-p 00000000 00:00 0 
+7f9d30ccc000-7f9d30ccf000 ---p 00000000 00:00 0 
+7f9d30ccf000-7f9d30dcd000 rw-p 00000000 00:00 0                          [stack:24297]
+7f9d30dcd000-7f9d30dd0000 r-xp 00000000 fe:00 2366343                    /usr/lib/libnss_myhostname.so.2
+7f9d30dd0000-7f9d30fcf000 ---p 00003000 fe:00 2366343                    /usr/lib/libnss_myhostname.so.2
+7f9d30fcf000-7f9d30fd0000 r--p 00002000 fe:00 2366343                    /usr/lib/libnss_myhostname.so.2
+7f9d30fd0000-7f9d30fd1000 rw-p 00003000 fe:00 2366343                    /usr/lib/libnss_myhostname.so.2
+7f9d30fd1000-7f9d30fd4000 r-xp 00000000 fe:00 2365989                    /usr/lib/libkeyutils.so.1.4
+7f9d30fd4000-7f9d311d3000 ---p 00003000 fe:00 2365989                    /usr/lib/libkeyutils.so.1.4
+7f9d311d3000-7f9d311d4000 r--p 00002000 fe:00 2365989                    /usr/lib/libkeyutils.so.1.4
+7f9d311d4000-7f9d311d5000 rw-p 00003000 fe:00 2365989                    /usr/lib/libkeyutils.so.1.4
+7f9d311d5000-7f9d311e0000 r-xp 00000000 fe:00 2366265                    /usr/lib/libkrb5support.so.0.1
+7f9d311e0000-7f9d313e0000 ---p 0000b000 fe:00 2366265                    /usr/lib/libkrb5support.so.0.1
+7f9d313e0000-7f9d313e1000 r--p 0000b000 fe:00 2366265                    /usr/lib/libkrb5support.so.0.1
+7f9d313e1000-7f9d313e2000 rw-p 0000c000 fe:00 2366265                    /usr/lib/libkrb5support.so.0.1
+7f9d313e2000-7f9d31416000 r-xp 00000000 fe:00 2366368                    /usr/lib/libpng16.so.16.7.0
+7f9d31416000-7f9d31615000 ---p 00034000 fe:00 2366368                    /usr/lib/libpng16.so.16.7.0
+7f9d31615000-7f9d31616000 r--p 00033000 fe:00 2366368                    /usr/lib/libpng16.so.16.7.0
+7f9d31616000-7f9d31617000 rw-p 00034000 fe:00 2366368                    /usr/lib/libpng16.so.16.7.0
+7f9d31617000-7f9d31626000 r-xp 00000000 fe:00 2366278                    /usr/lib/libbz2.so.1.0.6
+7f9d31626000-7f9d31825000 ---p 0000f000 fe:00 2366278                    /usr/lib/libbz2.so.1.0.6
+7f9d31825000-7f9d31827000 rw-p 0000e000 fe:00 2366278                    /usr/lib/libbz2.so.1.0.6
+7f9d31827000-7f9d3184e000 r-xp 00000000 fe:00 2366179                    /usr/lib/libexpat.so.1.6.0
+7f9d3184e000-7f9d31a4e000 ---p 00027000 fe:00 2366179                    /usr/lib/libexpat.so.1.6.0
+7f9d31a4e000-7f9d31a50000 r--p 00027000 fe:00 2366179                    /usr/lib/libexpat.so.1.6.0
+7f9d31a50000-7f9d31a51000 rw-p 00029000 fe:00 2366179                    /usr/lib/libexpat.so.1.6.0
+7f9d31a51000-7f9d31a59000 r-xp 00000000 fe:00 2365983                    /usr/lib/libcrypt-2.17.so
+7f9d31a59000-7f9d31c58000 ---p 00008000 fe:00 2365983                    /usr/lib/libcrypt-2.17.so
+7f9d31c58000-7f9d31c59000 r--p 00007000 fe:00 2365983                    /usr/lib/libcrypt-2.17.so
+7f9d31c59000-7f9d31c5a000 rw-p 00008000 fe:00 2365983                    /usr/lib/libcrypt-2.17.so
+7f9d31c5a000-7f9d31c88000 rw-p 00000000 00:00 0 
+7f9d31c88000-7f9d31ccd000 r-xp 00000000 fe:00 2366280                    /usr/lib/libdbus-1.so.3.7.3
+7f9d31ccd000-7f9d31ecd000 ---p 00045000 fe:00 2366280                    /usr/lib/libdbus-1.so.3.7.3
+7f9d31ecd000-7f9d31ece000 r--p 00045000 fe:00 2366280                    /usr/lib/libdbus-1.so.3.7.3
+7f9d31ece000-7f9d31ecf000 rw-p 00046000 fe:00 2366280                    /usr/lib/libdbus-1.so.3.7.3
+7f9d31ecf000-7f9d31edf000 r-xp 00000000 fe:00 2366402                    /usr/lib/libavahi-client.so.3.2.9
+7f9d31edf000-7f9d320de000 ---p 00010000 fe:00 2366402                    /usr/lib/libavahi-client.so.3.2.9
+7f9d320de000-7f9d320df000 r--p 0000f000 fe:00 2366402                    /usr/lib/libavahi-client.so.3.2.9
+7f9d320df000-7f9d320e0000 rw-p 00010000 fe:00 2366402                    /usr/lib/libavahi-client.so.3.2.9
+7f9d320e0000-7f9d320ec000 r-xp 00000000 fe:00 2366405                    /usr/lib/libavahi-common.so.3.5.3
+7f9d320ec000-7f9d322eb000 ---p 0000c000 fe:00 2366405                    /usr/lib/libavahi-common.so.3.5.3
+7f9d322eb000-7f9d322ec000 r--p 0000b000 fe:00 2366405                    /usr/lib/libavahi-common.so.3.5.3
+7f9d322ec000-7f9d322ed000 rw-p 0000c000 fe:00 2366405                    /usr/lib/libavahi-common.so.3.5.3
+7f9d322ed000-7f9d324cd000 r-xp 00000000 fe:00 2365138                    /usr/lib/libcrypto.so.1.0.0
+7f9d324cd000-7f9d326cd000 ---p 001e0000 fe:00 2365138                    /usr/lib/libcrypto.so.1.0.0
+7f9d326cd000-7f9d326e8000 r--p 001e0000 fe:00 2365138                    /usr/lib/libcrypto.so.1.0.0
+7f9d326e8000-7f9d326f3000 rw-p 001fb000 fe:00 2365138                    /usr/lib/libcrypto.so.1.0.0
+7f9d326f3000-7f9d326f7000 rw-p 00000000 00:00 0 
+7f9d326f7000-7f9d32759000 r-xp 00000000 fe:00 2365964                    /usr/lib/libssl.so.1.0.0
+7f9d32759000-7f9d32958000 ---p 00062000 fe:00 2365964                    /usr/lib/libssl.so.1.0.0
+7f9d32958000-7f9d3295c000 r--p 00061000 fe:00 2365964                    /usr/lib/libssl.so.1.0.0
+7f9d3295c000-7f9d32963000 rw-p 00065000 fe:00 2365964                    /usr/lib/libssl.so.1.0.0
+7f9d32963000-7f9d32966000 r-xp 00000000 fe:00 2366004                    /usr/lib/libcom_err.so.2.1
+7f9d32966000-7f9d32b65000 ---p 00003000 fe:00 2366004                    /usr/lib/libcom_err.so.2.1
+7f9d32b65000-7f9d32b66000 r--p 00002000 fe:00 2366004                    /usr/lib/libcom_err.so.2.1
+7f9d32b66000-7f9d32b67000 rw-p 00003000 fe:00 2366004                    /usr/lib/libcom_err.so.2.1
+7f9d32b67000-7f9d32b99000 r-xp 00000000 fe:00 2365191                    /usr/lib/libk5crypto.so.3.1
+7f9d32b99000-7f9d32d98000 ---p 00032000 fe:00 2365191                    /usr/lib/libk5crypto.so.3.1
+7f9d32d98000-7f9d32d9a000 r--p 00031000 fe:00 2365191                    /usr/lib/libk5crypto.so.3.1
+7f9d32d9a000-7f9d32d9b000 rw-p 00033000 fe:00 2365191                    /usr/lib/libk5crypto.so.3.1
+7f9d32d9b000-7f9d32d9c000 rw-p 00000000 00:00 0 
+7f9d32d9c000-7f9d32e6a000 r-xp 00000000 fe:00 2366211                    /usr/lib/libkrb5.so.3.3
+7f9d32e6a000-7f9d33069000 ---p 000ce000 fe:00 2366211                    /usr/lib/libkrb5.so.3.3
+7f9d33069000-7f9d33077000 r--p 000cd000 fe:00 2366211                    /usr/lib/libkrb5.so.3.3
+7f9d33077000-7f9d3307a000 rw-p 000db000 fe:00 2366211                    /usr/lib/libkrb5.so.3.3
+7f9d3307a000-7f9d330c1000 r-xp 00000000 fe:00 2366239                    /usr/lib/libgssapi_krb5.so.2.2
+7f9d330c1000-7f9d332c1000 ---p 00047000 fe:00 2366239                    /usr/lib/libgssapi_krb5.so.2.2
+7f9d332c1000-7f9d332c2000 r--p 00047000 fe:00 2366239                    /usr/lib/libgssapi_krb5.so.2.2
+7f9d332c2000-7f9d332c4000 rw-p 00048000 fe:00 2366239                    /usr/lib/libgssapi_krb5.so.2.2
+7f9d332c4000-7f9d33363000 r-xp 00000000 fe:00 2366482                    /usr/lib/libfreetype.so.6.11.1
+7f9d33363000-7f9d33562000 ---p 0009f000 fe:00 2366482                    /usr/lib/libfreetype.so.6.11.1
+7f9d33562000-7f9d33568000 r--p 0009e000 fe:00 2366482                    /usr/lib/libfreetype.so.6.11.1
+7f9d33568000-7f9d33569000 rw-p 000a4000 fe:00 2366482                    /usr/lib/libfreetype.so.6.11.1
+7f9d33569000-7f9d335a3000 r-xp 00000000 fe:00 2366493                    /usr/lib/libfontconfig.so.1.8.0
+7f9d335a3000-7f9d337a2000 ---p 0003a000 fe:00 2366493                    /usr/lib/libfontconfig.so.1.8.0
+7f9d337a2000-7f9d337a4000 r--p 00039000 fe:00 2366493                    /usr/lib/libfontconfig.so.1.8.0
+7f9d337a4000-7f9d337a5000 rw-p 0003b000 fe:00 2366493                    /usr/lib/libfontconfig.so.1.8.0
+7f9d337a5000-7f9d33813000 r-xp 00000000 fe:00 2366469                    /usr/lib/libcups.so.2
+7f9d33813000-7f9d33a13000 ---p 0006e000 fe:00 2366469                    /usr/lib/libcups.so.2
+7f9d33a13000-7f9d33a1b000 rw-p 0006e000 fe:00 2366469                    /usr/lib/libcups.so.2
+7f9d33a28000-7f9d33a2e000 r-xp 00000000 fe:00 3556                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/headless/libmawt.so
+7f9d33a2e000-7f9d33c2e000 ---p 00006000 fe:00 3556                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/headless/libmawt.so
+7f9d33c2e000-7f9d33c2f000 rw-p 00006000 fe:00 3556                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/headless/libmawt.so
+7f9d33c2f000-7f9d33ccf000 r-xp 00000000 fe:00 3532                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libawt.so
+7f9d33ccf000-7f9d33ecf000 ---p 000a0000 fe:00 3532                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libawt.so
+7f9d33ecf000-7f9d33edb000 rw-p 000a0000 fe:00 3532                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libawt.so
+7f9d33edb000-7f9d33eff000 rw-p 00000000 00:00 0 
+7f9d33eff000-7f9d33f02000 ---p 00000000 00:00 0 
+7f9d33f02000-7f9d34000000 rw-p 00000000 00:00 0                          [stack:24294]
+7f9d34000000-7f9d34047000 rw-p 00000000 00:00 0 
+7f9d34047000-7f9d38000000 ---p 00000000 00:00 0 
+7f9d38000000-7f9d3c000000 rw-p 00000000 00:00 0 
+7f9d3c000000-7f9d3c021000 rw-p 00000000 00:00 0 
+7f9d3c021000-7f9d40000000 ---p 00000000 00:00 0 
+7f9d40000000-7f9d40021000 rw-p 00000000 00:00 0 
+7f9d40021000-7f9d44000000 ---p 00000000 00:00 0 
+7f9d44000000-7f9d44045000 rw-p 00000000 00:00 0 
+7f9d44045000-7f9d48000000 ---p 00000000 00:00 0 
+7f9d48000000-7f9d48021000 rw-p 00000000 00:00 0 
+7f9d48021000-7f9d4c000000 ---p 00000000 00:00 0 
+7f9d4c000000-7f9d4d912000 rw-p 00000000 00:00 0 
+7f9d4d912000-7f9d50000000 ---p 00000000 00:00 0 
+7f9d50000000-7f9d51e25000 rw-p 00000000 00:00 0 
+7f9d51e25000-7f9d54000000 ---p 00000000 00:00 0 
+7f9d54000000-7f9d54021000 rw-p 00000000 00:00 0 
+7f9d54021000-7f9d58000000 ---p 00000000 00:00 0 
+7f9d58000000-7f9d58021000 rw-p 00000000 00:00 0 
+7f9d58021000-7f9d5c000000 ---p 00000000 00:00 0 
+7f9d5c000000-7f9d5c21b000 rw-p 00000000 00:00 0 
+7f9d5c21b000-7f9d60000000 ---p 00000000 00:00 0 
+7f9d60000000-7f9d60021000 rw-p 00000000 00:00 0 
+7f9d60021000-7f9d64000000 ---p 00000000 00:00 0 
+7f9d64000000-7f9d64163000 rw-p 00000000 00:00 0 
+7f9d64163000-7f9d68000000 ---p 00000000 00:00 0 
+7f9d68008000-7f9d68009000 rw-p 00000000 00:00 0 
+7f9d68009000-7f9d6800a000 r--s 00002000 fe:00 3519                       /usr/lib/jvm/java-7-openjdk/jre/lib/ext/dnsns.jar
+7f9d6800a000-7f9d6800d000 ---p 00000000 00:00 0 
+7f9d6800d000-7f9d6810b000 rw-p 00000000 00:00 0                          [stack:24291]
+7f9d6810b000-7f9d6810e000 ---p 00000000 00:00 0 
+7f9d6810e000-7f9d6820c000 rw-p 00000000 00:00 0 
+7f9d6820c000-7f9d6820f000 ---p 00000000 00:00 0 
+7f9d6820f000-7f9d6830d000 rw-p 00000000 00:00 0                          [stack:24285]
+7f9d6830d000-7f9d68310000 ---p 00000000 00:00 0 
+7f9d68310000-7f9d6840e000 rw-p 00000000 00:00 0                          [stack:24284]
+7f9d6840e000-7f9d68411000 ---p 00000000 00:00 0 
+7f9d68411000-7f9d6850f000 rw-p 00000000 00:00 0                          [stack:24283]
+7f9d6850f000-7f9d68512000 ---p 00000000 00:00 0 
+7f9d68512000-7f9d68610000 rw-p 00000000 00:00 0                          [stack:24282]
+7f9d68610000-7f9d68613000 ---p 00000000 00:00 0 
+7f9d68613000-7f9d68711000 rw-p 00000000 00:00 0                          [stack:24281]
+7f9d68711000-7f9d68714000 ---p 00000000 00:00 0 
+7f9d68714000-7f9d68812000 rw-p 00000000 00:00 0                          [stack:24299]
+7f9d68812000-7f9d68815000 ---p 00000000 00:00 0 
+7f9d68815000-7f9d68913000 rw-p 00000000 00:00 0                          [stack:24280]
+7f9d68913000-7f9d68916000 ---p 00000000 00:00 0 
+7f9d68916000-7f9d68a14000 rw-p 00000000 00:00 0                          [stack:24273]
+7f9d68a14000-7f9d68a16000 r--s 00014000 fe:00 1576323                    /home/minecraft/FTB/Damascus_Homeworld/mods/TreeCapitator.Forge.1.6.4.r09.Universal.zip
+7f9d68a16000-7f9d68a18000 r--s 00013000 fe:00 1575462                    /home/minecraft/FTB/Damascus_Homeworld/mods/Translocator 1.1.0.13.jar
+7f9d68a18000-7f9d68a1d000 r--s 00028000 fe:00 1575403                    /home/minecraft/FTB/Damascus_Homeworld/mods/TMechworks_1.6.4_0.1.2.jar
+7f9d68a1d000-7f9d68a36000 r--s 001da000 fe:00 1575490                    /home/minecraft/FTB/Damascus_Homeworld/mods/StevesCarts2.0.0.b3.zip
+7f9d68a36000-7f9d68a39000 r--s 0000f000 fe:00 1575415                    /home/minecraft/FTB/Damascus_Homeworld/mods/SlimevoidLib-Universal-v2.0.3.1 (MC1.6.4).zip
+7f9d68a39000-7f9d68a3d000 r--s 000a7000 fe:00 1576338                    /home/minecraft/FTB/Damascus_Homeworld/mods/SGCraft-0.7.3-mc1.6.4.jar
+7f9d68a3d000-7f9d68a43000 r--s 0002f000 fe:00 1576339                    /home/minecraft/FTB/Damascus_Homeworld/mods/roguelike-v1.2.9-forge-1.6.4.zip
+7f9d68a43000-7f9d68a45000 r--s 00011000 fe:00 1575417                    /home/minecraft/FTB/Damascus_Homeworld/mods/RedstonePasteMod1.5.1.zip
+7f9d68a45000-7f9d68a48000 r--s 00033000 fe:00 1575474                    /home/minecraft/FTB/Damascus_Homeworld/mods/RedstoneArsenal-1.0.0.0.jar
+7f9d68a48000-7f9d68a4c000 r--s 00022000 fe:00 1575438                    /home/minecraft/FTB/Damascus_Homeworld/mods/qCraft1.02_mc164.zip
+7f9d68a4c000-7f9d68a4e000 r--s 00012000 fe:00 1575441                    /home/minecraft/FTB/Damascus_Homeworld/mods/ProjectRedWorld-1.6.4-4.2.1.16.jar
+7f9d68a4e000-7f9d68a50000 r--s 0000d000 fe:00 1575465                    /home/minecraft/FTB/Damascus_Homeworld/mods/ProjectRedLighting-1.6.4-4.2.1.16.jar
+7f9d68a50000-7f9d68a55000 r--s 0003c000 fe:00 1575421                    /home/minecraft/FTB/Damascus_Homeworld/mods/ProjectRedIntegration-1.6.4-4.2.1.16.jar
+7f9d68a55000-7f9d68a56000 r--s 00001000 fe:00 1575463                    /home/minecraft/FTB/Damascus_Homeworld/mods/ProjectRedCompat-1.6.4-4.2.1.16.jar
+7f9d68a56000-7f9d68a5f000 r--s 000df000 fe:00 1575458                    /home/minecraft/FTB/Damascus_Homeworld/mods/PortalGun2.0.2.zip
+7f9d68a5f000-7f9d68a80000 r--s 004ff000 fe:00 1575429                    /home/minecraft/FTB/Damascus_Homeworld/mods/Opis_1.1.2_alpha.zip
+7f9d68a80000-7f9d68a89000 r--s 0007f000 fe:00 1575443                    /home/minecraft/FTB/Damascus_Homeworld/mods/OpenPeripheral-0.2.1-preview8.jar
+7f9d68a89000-7f9d68a8a000 r--s 00007000 fe:00 1575404                    /home/minecraft/FTB/Damascus_Homeworld/mods/obsidiplates-1.6.2-universal-2.0.0.15.jar
+7f9d68a8a000-7f9d68a94000 r--s 00078000 fe:00 1575410                    /home/minecraft/FTB/Damascus_Homeworld/mods/NEIPlugins-1.1.0.6.jar
+7f9d68a94000-7f9d68a96000 r--s 00011000 fe:00 1575493                    /home/minecraft/FTB/Damascus_Homeworld/mods/neiaddons-1.6.2-1.9.3.r47.jar
+7f9d68a96000-7f9d68a97000 r--s 00003000 fe:00 1575427                    /home/minecraft/FTB/Damascus_Homeworld/mods/Morpheus-1.6.4-1.2.32.jar
+7f9d68a97000-7f9d68a9b000 r--s 000ef000 fe:00 1575494                    /home/minecraft/FTB/Damascus_Homeworld/mods/Morph-Beta-0.4.0.zip
+7f9d68a9b000-7f9d68ab0000 r--s 00193000 fe:00 1575449                    /home/minecraft/FTB/Damascus_Homeworld/mods/ModularPowersuits-1.6.2-0.9.0-84.jar
+7f9d68ab0000-7f9d68ab8000 r--s 000ae000 fe:00 1575467                    /home/minecraft/FTB/Damascus_Homeworld/mods/Numina-1.6.2-0.1.1-53.jar
+7f9d68ab8000-7f9d68ad7000 r--s 002b2000 fe:00 1575470                    /home/minecraft/FTB/Damascus_Homeworld/mods/twilightforest-1.20.2.jar
+7f9d68ad7000-7f9d68ae9000 r--s 0019a000 fe:00 1575422                    /home/minecraft/FTB/Damascus_Homeworld/mods/mystcraft-uni-1.6.4-0.10.11.00.zip
+7f9d68ae9000-7f9d68af0000 r--s 0010f000 fe:00 1575399                    /home/minecraft/FTB/Damascus_Homeworld/mods/MFFS_v3.6.0.303.jar
+7f9d68af0000-7f9d68af7000 r--s 000b5000 fe:00 1575477                    /home/minecraft/FTB/Damascus_Homeworld/mods/magicbees-2.1.9.jar
+7f9d68af7000-7f9d68b0f000 r--s 001b1000 fe:00 1575515                    /home/minecraft/FTB/Damascus_Homeworld/mods/ThaumicTinkerer-2.3-103.jar
+7f9d68b0f000-7f9d68b14000 r--s 000d6000 fe:00 1575492                    /home/minecraft/FTB/Damascus_Homeworld/mods/Waila_1.4.4b.zip
+7f9d68b14000-7f9d68b40000 r--s 0029b000 fe:00 1575435                    /home/minecraft/FTB/Damascus_Homeworld/mods/Railcraft_1.6.4-8.3.2.0.jar
+7f9d68b40000-7f9d68b61000 r--s 009fe000 fe:00 1576325                    /home/minecraft/FTB/Damascus_Homeworld/mods/Thaumcraft4.1.0e.zip
+7f9d68b61000-7f9d68b64000 r--s 0001e000 fe:00 1575489                    /home/minecraft/FTB/Damascus_Homeworld/mods/ironchest-universal-1.6.4-5.4.1.649.zip
+7f9d68b64000-7f9d68b7f000 r--s 000ac000 fe:00 1575444                    /home/minecraft/FTB/Damascus_Homeworld/mods/IC2NuclearControl-1.6.2c-ic2-experimental.zip
+7f9d68b7f000-7f9d68b81000 r--s 00007000 fe:00 1575432                    /home/minecraft/FTB/Damascus_Homeworld/mods/HatStand2.0.0.zip
+7f9d68b81000-7f9d68b83000 r--s 00070000 fe:00 1575419                    /home/minecraft/FTB/Damascus_Homeworld/mods/Hats2.0.2.zip
+7f9d68b83000-7f9d68b86000 r--s 00073000 fe:00 1575481                    /home/minecraft/FTB/Damascus_Homeworld/mods/GravityGun2.0.0.zip
+7f9d68b86000-7f9d68b88000 r--s 0000a000 fe:00 1575482                    /home/minecraft/FTB/Damascus_Homeworld/mods/iChunUtil2.3.0.zip
+7f9d68b88000-7f9d68b8d000 r--s 00047000 fe:00 1576342                    /home/minecraft/FTB/Damascus_Homeworld/mods/Galacticraft-Planets-1.6.4-2.0.10.972.jar
+7f9d68b8d000-7f9d68bb5000 r--s 00b1c000 fe:00 1576331                    /home/minecraft/FTB/Damascus_Homeworld/mods/Galacticraft-1.6.4-2.0.10.972.jar
+7f9d68bb5000-7f9d68bb7000 r--s 00008000 fe:00 1575433                    /home/minecraft/FTB/Damascus_Homeworld/mods/flatsigns-1.6.2-universal-1.4.0.15.jar
+7f9d68bb7000-7f9d68bcb000 r--s 00111000 fe:00 1575418                    /home/minecraft/FTB/Damascus_Homeworld/mods/Factorization-0.8.23.jar
+7f9d68bcb000-7f9d68be1000 r--s 000a5000 fe:00 1575480                    /home/minecraft/FTB/Damascus_Homeworld/mods/extrautils-1.0.2.zip
+7f9d68be1000-7f9d68be3000 r--s 0001a000 fe:00 1575442                    /home/minecraft/FTB/Damascus_Homeworld/mods/EnderStorage 1.4.3.5.jar
+7f9d68be3000-7f9d68be7000 r--s 0001c000 fe:00 1575400                    /home/minecraft/FTB/Damascus_Homeworld/mods/EnchantingPlus-1.16.5.zip
+7f9d68be7000-7f9d68be9000 r--s 00003000 fe:00 1575431                    /home/minecraft/FTB/Damascus_Homeworld/mods/DenPipes-Emerald-1.6.4-1.1.6.jar
+7f9d68be9000-7f9d68bee000 r--s 00043000 fe:00 1575407                    /home/minecraft/FTB/Damascus_Homeworld/mods/DenPipes-Forestry-1.6.4-1.1.8.jar
+7f9d68bee000-7f9d68c07000 r--s 0010b000 fe:00 1575476                    /home/minecraft/FTB/Damascus_Homeworld/mods/ComputerCraft1.57.zip
+7f9d68c07000-7f9d68c09000 r--s 0000c000 fe:00 1575488                    /home/minecraft/FTB/Damascus_Homeworld/mods/compactsolars-universal-1.6.4-4.4.19.224.zip
+7f9d68c09000-7f9d68c0b000 r--s 00016000 fe:00 1575466                    /home/minecraft/FTB/Damascus_Homeworld/mods/ChickenChunks 1.3.3.3.jar
+7f9d68c0b000-7f9d68c0f000 r--s 00025000 fe:00 1575414                    /home/minecraft/FTB/Damascus_Homeworld/mods/buildcraft-Z-additional-buildcraft-objects-1.0.6.182.jar
+7f9d68c0f000-7f9d68c11000 r--s 00011000 fe:00 1576320                    /home/minecraft/FTB/Damascus_Homeworld/mods/bspkrsCorev5.3.zip
+7f9d68c11000-7f9d68c14000 r--s 0002d000 fe:00 1575428                    /home/minecraft/FTB/Damascus_Homeworld/mods/BILLUND1.01.zip
+7f9d68c14000-7f9d68c1d000 r--s 00057000 fe:00 1575460                    /home/minecraft/FTB/Damascus_Homeworld/mods/BiblioWoods[Natura][v1.1].zip
+7f9d68c1d000-7f9d68c2a000 r--s 0007d000 fe:00 1575402                    /home/minecraft/FTB/Damascus_Homeworld/mods/BiblioWoods[Forestry][v1.3].zip
+7f9d68c2a000-7f9d68c61000 r--s 002e7000 fe:00 1575461                    /home/minecraft/FTB/Damascus_Homeworld/mods/Forestry-A-2.3.1.0.jar
+7f9d68c61000-7f9d68c8f000 r--s 001ff000 fe:00 1575408                    /home/minecraft/FTB/Damascus_Homeworld/mods/MineFactoryReloaded-2.7.4-255.jar
+7f9d68c8f000-7f9d68ca6000 r--s 0022b000 fe:00 1575451                    /home/minecraft/FTB/Damascus_Homeworld/mods/ThermalExpansion-3.0.0.2.jar
+7f9d68ca6000-7f9d68cc1000 r--s 0012e000 fe:00 1575486                    /home/minecraft/FTB/Damascus_Homeworld/mods/buildcraft-A-1.6.2-4.1.2.jar
+7f9d68cc1000-7f9d68cc8000 r--s 0004f000 fe:00 1575495                    /home/minecraft/FTB/Damascus_Homeworld/mods/BiblioWoods[BiomesOPlenty][v1.3].zip
+7f9d68cc8000-7f9d68cda000 r--s 000c5000 fe:00 1575457                    /home/minecraft/FTB/Damascus_Homeworld/mods/Natura_mc1.6.X_2.1.14.jar
+7f9d68cda000-7f9d68ce8000 r--s 0012f000 fe:00 1575469                    /home/minecraft/FTB/Damascus_Homeworld/mods/BiblioCraft[v1.5.3].zip
+7f9d68ce8000-7f9d68cec000 r--s 00023000 fe:00 1576319                    /home/minecraft/FTB/Damascus_Homeworld/mods/backpack-1.26.29-1.6.x.jar
+7f9d68cec000-7f9d68d2c000 r--s 01265000 fe:00 1575447                    /home/minecraft/FTB/Damascus_Homeworld/mods/AM2_1.1.1c.zip
+7f9d68d2c000-7f9d68d2f000 r--s 0001e000 fe:00 1576341                    /home/minecraft/FTB/Damascus_Homeworld/mods/[1.6.4] Useful Pets 1.1.6.zip
+7f9d68d2f000-7f9d68d37000 r-xp 00000000 fe:00 3537                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libmanagement.so
+7f9d68d37000-7f9d68f36000 ---p 00008000 fe:00 3537                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libmanagement.so
+7f9d68f36000-7f9d68f37000 rw-p 00007000 fe:00 3537                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libmanagement.so
+7f9d68f37000-7f9d68f3a000 ---p 00000000 00:00 0 
+7f9d68f3a000-7f9d69038000 rw-p 00000000 00:00 0                          [stack:24259]
+7f9d69038000-7f9d6903b000 ---p 00000000 00:00 0 
+7f9d6903b000-7f9d69139000 rw-p 00000000 00:00 0                          [stack:24258]
+7f9d69139000-7f9d6913c000 ---p 00000000 00:00 0 
+7f9d6913c000-7f9d6923a000 rw-p 00000000 00:00 0                          [stack:24257]
+7f9d6923a000-7f9d6923d000 ---p 00000000 00:00 0 
+7f9d6923d000-7f9d6933b000 rw-p 00000000 00:00 0                          [stack:24256]
+7f9d6933b000-7f9d69340000 r-xp 00000000 fe:00 2366050                    /usr/lib/libnss_dns-2.17.so
+7f9d69340000-7f9d6953f000 ---p 00005000 fe:00 2366050                    /usr/lib/libnss_dns-2.17.so
+7f9d6953f000-7f9d69540000 r--p 00004000 fe:00 2366050                    /usr/lib/libnss_dns-2.17.so
+7f9d69540000-7f9d69541000 rw-p 00005000 fe:00 2366050                    /usr/lib/libnss_dns-2.17.so
+7f9d69541000-7f9d695b7000 r-xp 00000000 fe:00 2365236                    /usr/lib/libfreebl3.so
+7f9d695b7000-7f9d697b6000 ---p 00076000 fe:00 2365236                    /usr/lib/libfreebl3.so
+7f9d697b6000-7f9d697b8000 r--p 00075000 fe:00 2365236                    /usr/lib/libfreebl3.so
+7f9d697b8000-7f9d697b9000 rw-p 00077000 fe:00 2365236                    /usr/lib/libfreebl3.so
+7f9d697b9000-7f9d697bd000 rw-p 00000000 00:00 0 
+7f9d697bd000-7f9d69873000 r-xp 00000000 fe:00 2365139                    /usr/lib/libsqlite3.so.0.8.6
+7f9d69873000-7f9d69a73000 ---p 000b6000 fe:00 2365139                    /usr/lib/libsqlite3.so.0.8.6
+7f9d69a73000-7f9d69a75000 r--p 000b6000 fe:00 2365139                    /usr/lib/libsqlite3.so.0.8.6
+7f9d69a75000-7f9d69a78000 rw-p 000b8000 fe:00 2365139                    /usr/lib/libsqlite3.so.0.8.6
+7f9d69a78000-7f9d69aba000 r-xp 00000000 fe:00 2366054                    /usr/lib/libsoftokn3.so
+7f9d69aba000-7f9d69cb9000 ---p 00042000 fe:00 2366054                    /usr/lib/libsoftokn3.so
+7f9d69cb9000-7f9d69cbb000 r--p 00041000 fe:00 2366054                    /usr/lib/libsoftokn3.so
+7f9d69cbb000-7f9d69cbc000 rw-p 00043000 fe:00 2366054                    /usr/lib/libsoftokn3.so
+7f9d69cbc000-7f9d69cf5000 r-xp 00000000 fe:00 2365056                    /usr/lib/libnspr4.so
+7f9d69cf5000-7f9d69ef5000 ---p 00039000 fe:00 2365056                    /usr/lib/libnspr4.so
+7f9d69ef5000-7f9d69ef6000 r--p 00039000 fe:00 2365056                    /usr/lib/libnspr4.so
+7f9d69ef6000-7f9d69ef8000 rw-p 0003a000 fe:00 2365056                    /usr/lib/libnspr4.so
+7f9d69ef8000-7f9d69efa000 rw-p 00000000 00:00 0 
+7f9d69efa000-7f9d69efd000 r-xp 00000000 fe:00 2366200                    /usr/lib/libplds4.so
+7f9d69efd000-7f9d6a0fc000 ---p 00003000 fe:00 2366200                    /usr/lib/libplds4.so
+7f9d6a0fc000-7f9d6a0fd000 r--p 00002000 fe:00 2366200                    /usr/lib/libplds4.so
+7f9d6a0fd000-7f9d6a0fe000 rw-p 00003000 fe:00 2366200                    /usr/lib/libplds4.so
+7f9d6a0fe000-7f9d6a102000 r-xp 00000000 fe:00 2366235                    /usr/lib/libplc4.so
+7f9d6a102000-7f9d6a301000 ---p 00004000 fe:00 2366235                    /usr/lib/libplc4.so
+7f9d6a301000-7f9d6a302000 r--p 00003000 fe:00 2366235                    /usr/lib/libplc4.so
+7f9d6a302000-7f9d6a303000 rw-p 00004000 fe:00 2366235                    /usr/lib/libplc4.so
+7f9d6a303000-7f9d6a328000 r-xp 00000000 fe:00 2365656                    /usr/lib/libnssutil3.so
+7f9d6a328000-7f9d6a528000 ---p 00025000 fe:00 2365656                    /usr/lib/libnssutil3.so
+7f9d6a528000-7f9d6a52e000 r--p 00025000 fe:00 2365656                    /usr/lib/libnssutil3.so
+7f9d6a52e000-7f9d6a52f000 rw-p 0002b000 fe:00 2365656                    /usr/lib/libnssutil3.so
+7f9d6a52f000-7f9d6a530000 r--s 00008000 fe:00 1575485                    /home/minecraft/FTB/Damascus_Homeworld/mods/GateCopy-1.6.4-3.1.4.jar
+7f9d6a530000-7f9d6a535000 r--s 0002e000 fe:00 1575456                    /home/minecraft/FTB/Damascus_Homeworld/mods/1.6.4/CodeChickenLib-universal-1.6.4-1.0.0.45.jar
+7f9d6a535000-7f9d6a537000 r--s 0001a000 fe:00 1575471                    /home/minecraft/FTB/Damascus_Homeworld/mods/slick-util.jar
+7f9d6a537000-7f9d6a53c000 r--s 0002f000 fe:00 1575446                    /home/minecraft/FTB/Damascus_Homeworld/mods/ic2/ejml-0.23.jar
+7f9d6a53c000-7f9d6a672000 r-xp 00000000 fe:00 2366207                    /usr/lib/libnss3.so
+7f9d6a672000-7f9d6a872000 ---p 00136000 fe:00 2366207                    /usr/lib/libnss3.so
+7f9d6a872000-7f9d6a877000 r--p 00136000 fe:00 2366207                    /usr/lib/libnss3.so
+7f9d6a877000-7f9d6a87a000 rw-p 0013b000 fe:00 2366207                    /usr/lib/libnss3.so
+7f9d6a87a000-7f9d6a87b000 rw-p 00000000 00:00 0 
+7f9d6a87b000-7f9d6a88b000 r-xp 00000000 fe:00 3536                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libj2pkcs11.so
+7f9d6a88b000-7f9d6aa8a000 ---p 00010000 fe:00 3536                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libj2pkcs11.so
+7f9d6aa8a000-7f9d6aa8b000 rw-p 0000f000 fe:00 3536                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libj2pkcs11.so
+7f9d6aa8b000-7f9d6aa8e000 r--s 00032000 fe:00 3517                       /usr/lib/jvm/java-7-openjdk/jre/lib/ext/sunjce_provider.jar
+7f9d6aa8e000-7f9d6aa92000 r--s 0003b000 fe:00 3516                       /usr/lib/jvm/java-7-openjdk/jre/lib/ext/sunpkcs11.jar
+7f9d6aa92000-7f9d6aa95000 r--s 00017000 fe:00 3472                       /usr/lib/jvm/java-7-openjdk/jre/lib/jce.jar
+7f9d6aa95000-7f9d6aaa8000 r-xp 00000000 fe:00 3553                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libunpack.so
+7f9d6aaa8000-7f9d6aca7000 ---p 00013000 fe:00 3553                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libunpack.so
+7f9d6aca7000-7f9d6aca9000 rw-p 00012000 fe:00 3553                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libunpack.so
+7f9d6aca9000-7f9d6acb3000 r--s 000b8000 fe:00 3494                       /usr/lib/jvm/java-7-openjdk/jre/lib/resources.jar
+7f9d6acb3000-7f9d6acb6000 r--s 00016000 fe:00 1575459                    /home/minecraft/FTB/Damascus_Homeworld/mods/switches-1.6.4-universal-coremod-1.3.0.25.jar
+7f9d6acb6000-7f9d6acda000 r--s 00402000 fe:00 1575420                    /home/minecraft/FTB/Damascus_Homeworld/mods/industrialcraft-2_2.0.316-experimental.jar
+7f9d6acda000-7f9d6acdc000 r--s 00011000 fe:00 1575409                    /home/minecraft/FTB/Damascus_Homeworld/mods/denLib-1.6.4-3.1.35.jar
+7f9d6acdc000-7f9d6acf2000 r--s 0013c000 fe:00 1575475                    /home/minecraft/FTB/Damascus_Homeworld/mods/appeng-rv14-finale2-mc16x.jar
+7f9d6acf2000-7f9d6acf5000 r--s 0007b000 fe:00 1576340                    /home/minecraft/FTB/Damascus_Homeworld/mods/[1.6.4] SpaceCore 0.6.2.jar
+7f9d6acf5000-7f9d6acfa000 r--s 0003a000 fe:00 1575405                    /home/minecraft/FTB/Damascus_Homeworld/mods/WR-CBE 1.4.0.6.jar
+7f9d6acfa000-7f9d6ad6b000 r--s 003ef000 fe:00 1575484                    /home/minecraft/FTB/Damascus_Homeworld/mods/TConstruct_mc1.6.4_1.5.2.4.jar
+7f9d6ad6b000-7f9d6ad7b000 r--s 0036d000 fe:00 1575483                    /home/minecraft/FTB/Damascus_Homeworld/mods/ProjectRedBase-1.6.4-4.2.1.16.jar
+7f9d6ad7b000-7f9d6ad82000 r--s 00053000 fe:00 1575425                    /home/minecraft/FTB/Damascus_Homeworld/mods/PluginsforForestry-1.6.4-3.2.30.jar
+7f9d6ad82000-7f9d6b583000 rw-p 00000000 00:00 0 
+7f9d6b583000-7f9d6b586000 ---p 00000000 00:00 0 
+7f9d6b586000-7f9d6b684000 rw-p 00000000 00:00 0                          [stack:24254]
+7f9d6b684000-7f9d6b698000 r-xp 00000000 fe:00 2365021                    /usr/lib/libresolv-2.17.so
+7f9d6b698000-7f9d6b897000 ---p 00014000 fe:00 2365021                    /usr/lib/libresolv-2.17.so
+7f9d6b897000-7f9d6b898000 r--p 00013000 fe:00 2365021                    /usr/lib/libresolv-2.17.so
+7f9d6b898000-7f9d6b899000 rw-p 00014000 fe:00 2365021                    /usr/lib/libresolv-2.17.so
+7f9d6b899000-7f9d6b89b000 rw-p 00000000 00:00 0 
+7f9d6b89b000-7f9d6b8fc000 r-xp 00000000 fe:00 2366113                    /usr/lib/libpcre.so.1.2.0
+7f9d6b8fc000-7f9d6bafc000 ---p 00061000 fe:00 2366113                    /usr/lib/libpcre.so.1.2.0
+7f9d6bafc000-7f9d6bafd000 r--p 00061000 fe:00 2366113                    /usr/lib/libpcre.so.1.2.0
+7f9d6bafd000-7f9d6bafe000 rw-p 00062000 fe:00 2366113                    /usr/lib/libpcre.so.1.2.0
+7f9d6bafe000-7f9d6bb01000 r-xp 00000000 fe:00 2365657                    /usr/lib/libgmodule-2.0.so.0.3600.2
+7f9d6bb01000-7f9d6bd00000 ---p 00003000 fe:00 2365657                    /usr/lib/libgmodule-2.0.so.0.3600.2
+7f9d6bd00000-7f9d6bd01000 r--p 00002000 fe:00 2365657                    /usr/lib/libgmodule-2.0.so.0.3600.2
+7f9d6bd01000-7f9d6bd02000 rw-p 00003000 fe:00 2365657                    /usr/lib/libgmodule-2.0.so.0.3600.2
+7f9d6bd02000-7f9d6bdfe000 r-xp 00000000 fe:00 2365972                    /usr/lib/libglib-2.0.so.0.3600.2
+7f9d6bdfe000-7f9d6bffd000 ---p 000fc000 fe:00 2365972                    /usr/lib/libglib-2.0.so.0.3600.2
+7f9d6bffd000-7f9d6bffe000 r--p 000fb000 fe:00 2365972                    /usr/lib/libglib-2.0.so.0.3600.2
+7f9d6bffe000-7f9d6bfff000 rw-p 000fc000 fe:00 2365972                    /usr/lib/libglib-2.0.so.0.3600.2
+7f9d6bfff000-7f9d6c000000 rw-p 00000000 00:00 0 
+7f9d6c000000-7f9d6c142000 rw-p 00000000 00:00 0 
+7f9d6c142000-7f9d70000000 ---p 00000000 00:00 0 
+7f9d70000000-7f9d70004000 r--s 00019000 fe:00 1575406                    /home/minecraft/FTB/Damascus_Homeworld/mods/Universal-Electricity-3.0.0.253-core.jar
+7f9d70004000-7f9d70006000 r--s 0001e000 fe:00 1575464                    /home/minecraft/FTB/Damascus_Homeworld/mods/PowerCrystalsCore-1.1.8-9.jar
+7f9d70006000-7f9d7001a000 r--s 00156000 fe:00 1575430                    /home/minecraft/FTB/Damascus_Homeworld/mods/OpenBlocks-1.2.2.jar
+7f9d7001a000-7f9d70020000 r--s 00064000 fe:00 1575426                    /home/minecraft/FTB/Damascus_Homeworld/mods/NotEnoughItems 1.6.1.8.jar
+7f9d70020000-7f9d70021000 r--s 0000a000 fe:00 1575448                    /home/minecraft/FTB/Damascus_Homeworld/mods/MobiusCore_1.0.4.jar
+7f9d70021000-7f9d70022000 r--s 00004000 fe:00 1576337                    /home/minecraft/FTB/Damascus_Homeworld/mods/MicdoodleCore-1.6.4-2.0.10.972.jar
+7f9d70022000-7f9d7006f000 r--s 00384000 fe:00 1575434                    /home/minecraft/FTB/Damascus_Homeworld/mods/LogisticsPipes-MC1.6.4-0.7.4.dev.80.jar
+7f9d7006f000-7f9d70072000 r--s 0002c000 fe:00 1575479                    /home/minecraft/FTB/Damascus_Homeworld/mods/InventoryTweaks-MC1.6.2-1.56-b77.jar
+7f9d70072000-7f9d70073000 r--s 00006000 fe:00 1575468                    /home/minecraft/FTB/Damascus_Homeworld/mods/InfiniBows-1.6.4-universal-coremod-1.2.0.14.jar
+7f9d70073000-7f9d70074000 r--s 00010000 fe:00 1575424                    /home/minecraft/FTB/Damascus_Homeworld/mods/Evoc_1.0.0a.jar
+7f9d70074000-7f9d70077000 r--s 00026000 fe:00 1575401                    /home/minecraft/FTB/Damascus_Homeworld/mods/CodeChickenCore 0.9.0.7.jar
+7f9d70077000-7f9d7007e000 r-xp 00000000 fe:00 2365044                    /usr/lib/libffi.so.6.0.1
+7f9d7007e000-7f9d7027d000 ---p 00007000 fe:00 2365044                    /usr/lib/libffi.so.6.0.1
+7f9d7027d000-7f9d7027e000 r--p 00006000 fe:00 2365044                    /usr/lib/libffi.so.6.0.1
+7f9d7027e000-7f9d7027f000 rw-p 00007000 fe:00 2365044                    /usr/lib/libffi.so.6.0.1
+7f9d7027f000-7f9d702cc000 r-xp 00000000 fe:00 2365059                    /usr/lib/libgobject-2.0.so.0.3600.2
+7f9d702cc000-7f9d704cc000 ---p 0004d000 fe:00 2365059                    /usr/lib/libgobject-2.0.so.0.3600.2
+7f9d704cc000-7f9d704cd000 r--p 0004d000 fe:00 2365059                    /usr/lib/libgobject-2.0.so.0.3600.2
+7f9d704cd000-7f9d704ce000 rw-p 0004e000 fe:00 2365059                    /usr/lib/libgobject-2.0.so.0.3600.2
+7f9d704ce000-7f9d70620000 r-xp 00000000 fe:00 2365038                    /usr/lib/libgio-2.0.so.0.3600.2
+7f9d70620000-7f9d70820000 ---p 00152000 fe:00 2365038                    /usr/lib/libgio-2.0.so.0.3600.2
+7f9d70820000-7f9d70824000 r--p 00152000 fe:00 2365038                    /usr/lib/libgio-2.0.so.0.3600.2
+7f9d70824000-7f9d70826000 rw-p 00156000 fe:00 2365038                    /usr/lib/libgio-2.0.so.0.3600.2
+7f9d70826000-7f9d70828000 rw-p 00000000 00:00 0 
+7f9d70828000-7f9d7083e000 r-xp 00000000 fe:00 3530                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libnet.so
+7f9d7083e000-7f9d70a3e000 ---p 00016000 fe:00 3530                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libnet.so
+7f9d70a3e000-7f9d70a3f000 rw-p 00016000 fe:00 3530                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libnet.so
+7f9d70a3f000-7f9d70a4f000 r-xp 00000000 fe:00 3554                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libnio.so
+7f9d70a4f000-7f9d70c4f000 ---p 00010000 fe:00 3554                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libnio.so
+7f9d70c4f000-7f9d70c50000 rw-p 00010000 fe:00 3554                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libnio.so
+7f9d70c50000-7f9d75000000 rw-p 00000000 00:00 0 
+7f9d75000000-7f9d76020000 rwxp 00000000 00:00 0 
+7f9d76020000-7f9d788e5000 rw-p 00000000 00:00 0 
+7f9d788e5000-7f9d7c000000 ---p 00000000 00:00 0 
+7f9d7c000000-7f9d7c002000 r--s 0000b000 fe:00 1575478                    /home/minecraft/FTB/Damascus_Homeworld/mods/DenPipes-1.6.4-2.1.18.jar
+7f9d7c002000-7f9d7c009000 r--s 00064000 fe:00 1575491                    /home/minecraft/FTB/Damascus_Homeworld/mods/CoFHCore-2.0.0.2.jar
+7f9d7c009000-7f9d7c011000 r--s 00087000 fe:00 1575439                    /home/minecraft/FTB/Damascus_Homeworld/mods/Calclavia-Core-v1.0.0.26.jar
+7f9d7c011000-7f9d7c016000 r--s 0002e000 fe:00 1575456                    /home/minecraft/FTB/Damascus_Homeworld/mods/1.6.4/CodeChickenLib-universal-1.6.4-1.0.0.45.jar
+7f9d7c016000-7f9d7c031000 r--s 004fb000 fe:00 1575487                    /home/minecraft/FTB/Damascus_Homeworld/mods/BiomesOPlenty-universal-1.6.4-1.2.1.416.jar
+7f9d7c031000-7f9d7c032000 r--s 00002000 fe:00 1575454                    /home/minecraft/FTB/Damascus_Homeworld/mods/1.6.4/WorldCore-universal-1.6.4-1.1.0.17.jar
+7f9d7c032000-7f9d7c045000 r--s 000bc000 fe:00 1575455                    /home/minecraft/FTB/Damascus_Homeworld/mods/1.6.4/ForgeMultipart-universal-1.6.4-1.0.0.227.jar
+7f9d7c045000-7f9d7c046000 r--s 00001000 fe:00 1575452                    /home/minecraft/FTB/Damascus_Homeworld/mods/1.6.4-SortFix-1.0.jar
+7f9d7c046000-7f9d7c143000 r--s 00ce2000 fe:00 1575394                    /home/minecraft/FTB/Damascus_Homeworld/libraries/org/scala-lang/scala-compiler/2.10.2/scala-compiler-2.10.2.jar
+7f9d7c143000-7f9d7c1b6000 r--s 00670000 fe:00 1575397                    /home/minecraft/FTB/Damascus_Homeworld/libraries/org/scala-lang/scala-library/2.10.2/scala-library-2.10.2.jar
+7f9d7c1b6000-7f9d7c1ba000 r--s 00085000 fe:00 3518                       /usr/lib/jvm/java-7-openjdk/jre/lib/ext/localedata.jar
+7f9d7c1ba000-7f9d7c1bc000 r--s 0000d000 fe:00 1575376                    /home/minecraft/FTB/Damascus_Homeworld/libraries/net/sf/jopt-simple/jopt-simple/4.5/jopt-simple-4.5.jar
+7f9d7c1bc000-7f9d7c1bd000 r--s 00001000 fe:00 1575384                    /home/minecraft/FTB/Damascus_Homeworld/libraries/lzma/lzma/0.0.1/lzma-0.0.1.jar
+7f9d7c1bd000-7f9d7c1c2000 r--s 00030000 fe:00 1575390                    /home/minecraft/FTB/Damascus_Homeworld/libraries/org/ow2/asm/asm-all/4.1/asm-all-4.1.jar
+7f9d7c1c2000-7f9d7c1c7000 r--s 0004c000 fe:00 3478                       /usr/lib/jvm/java-7-openjdk/jre/lib/jsse.jar
+7f9d7c1c7000-7f9d7c24d000 r--s 0073b000 fe:00 1575369                    /home/minecraft/FTB/Damascus_Homeworld/server.jar
+7f9d7c24d000-7f9d7c24e000 ---p 00000000 00:00 0 
+7f9d7c24e000-7f9d7c34e000 rw-p 00000000 00:00 0                          [stack:24253]
+7f9d7c34e000-7f9d7c351000 ---p 00000000 00:00 0 
+7f9d7c351000-7f9d7c44f000 rw-p 00000000 00:00 0                          [stack:24252]
+7f9d7c44f000-7f9d7c452000 ---p 00000000 00:00 0 
+7f9d7c452000-7f9d7c550000 rw-p 00000000 00:00 0                          [stack:24251]
+7f9d7c550000-7f9d7c553000 ---p 00000000 00:00 0 
+7f9d7c553000-7f9d7c651000 rw-p 00000000 00:00 0                          [stack:24250]
+7f9d7c651000-7f9d7c654000 ---p 00000000 00:00 0 
+7f9d7c654000-7f9d7c752000 rw-p 00000000 00:00 0                          [stack:24249]
+7f9d7c752000-7f9d7c755000 ---p 00000000 00:00 0 
+7f9d7c755000-7f9d7c853000 rw-p 00000000 00:00 0                          [stack:24248]
+7f9d7c853000-7f9d7c856000 ---p 00000000 00:00 0 
+7f9d7c856000-7f9d7c954000 rw-p 00000000 00:00 0                          [stack:24247]
+7f9d7c954000-7f9d7c955000 ---p 00000000 00:00 0 
+7f9d7c955000-7f9d7d3a6000 rw-p 00000000 00:00 0                          [stack:24246]
+7f9d7d3a6000-7f9d7d554000 r--s 01cf4000 fe:00 3493                       /usr/lib/jvm/java-7-openjdk/jre/lib/rt.jar
+7f9d7d554000-7f9d7da60000 rw-p 00000000 00:00 0 
+7f9d7da60000-7f9d7da61000 ---p 00000000 00:00 0 
+7f9d7da61000-7f9d7db61000 rw-p 00000000 00:00 0                          [stack:24245]
+7f9d7db61000-7f9d7db62000 ---p 00000000 00:00 0 
+7f9d7db62000-7f9d7dca2000 rw-p 00000000 00:00 0                          [stack:24244]
+7f9d7dca2000-7f9d7dcb5000 rw-p 00000000 00:00 0 
+7f9d7dcb5000-7f9d7de25000 rw-p 00000000 00:00 0 
+7f9d7de25000-7f9d7df50000 rw-p 00000000 00:00 0 
+7f9d7df50000-7f9d7df90000 rw-p 00000000 00:00 0 
+7f9d7df90000-7f9d7dfa3000 rw-p 00000000 00:00 0 
+7f9d7dfa3000-7f9d7e113000 rw-p 00000000 00:00 0 
+7f9d7e113000-7f9d7e23d000 rw-p 00000000 00:00 0 
+7f9d7e23d000-7f9d7e38b000 rw-p 00000000 00:00 0 
+7f9d7e38b000-7f9d7e38c000 rw-p 00000000 00:00 0 
+7f9d7e38c000-7f9d7e394000 r-xp 00000000 fe:00 3546                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libzip.so
+7f9d7e394000-7f9d7e593000 ---p 00008000 fe:00 3546                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libzip.so
+7f9d7e593000-7f9d7e594000 rw-p 00007000 fe:00 3546                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libzip.so
+7f9d7e594000-7f9d7e59f000 r-xp 00000000 fe:00 2366328                    /usr/lib/libnss_files-2.17.so
+7f9d7e59f000-7f9d7e79f000 ---p 0000b000 fe:00 2366328                    /usr/lib/libnss_files-2.17.so
+7f9d7e79f000-7f9d7e7a0000 r--p 0000b000 fe:00 2366328                    /usr/lib/libnss_files-2.17.so
+7f9d7e7a0000-7f9d7e7a1000 rw-p 0000c000 fe:00 2366328                    /usr/lib/libnss_files-2.17.so
+7f9d7e7a1000-7f9d7e7cc000 r-xp 00000000 fe:00 3545                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libjava.so
+7f9d7e7cc000-7f9d7e9cb000 ---p 0002b000 fe:00 3545                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libjava.so
+7f9d7e9cb000-7f9d7e9cd000 rw-p 0002a000 fe:00 3545                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libjava.so
+7f9d7e9cd000-7f9d7e9da000 r-xp 00000000 fe:00 3521                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libverify.so
+7f9d7e9da000-7f9d7ebd9000 ---p 0000d000 fe:00 3521                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libverify.so
+7f9d7ebd9000-7f9d7ebdb000 rw-p 0000c000 fe:00 3521                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/libverify.so
+7f9d7ebdb000-7f9d7ebe2000 r-xp 00000000 fe:00 2366323                    /usr/lib/librt-2.17.so
+7f9d7ebe2000-7f9d7ede1000 ---p 00007000 fe:00 2366323                    /usr/lib/librt-2.17.so
+7f9d7ede1000-7f9d7ede2000 r--p 00006000 fe:00 2366323                    /usr/lib/librt-2.17.so
+7f9d7ede2000-7f9d7ede3000 rw-p 00007000 fe:00 2366323                    /usr/lib/librt-2.17.so
+7f9d7ede3000-7f9d7edf8000 r-xp 00000000 fe:00 2365630                    /usr/lib/libgcc_s.so.1
+7f9d7edf8000-7f9d7eff8000 ---p 00015000 fe:00 2365630                    /usr/lib/libgcc_s.so.1
+7f9d7eff8000-7f9d7eff9000 rw-p 00015000 fe:00 2365630                    /usr/lib/libgcc_s.so.1
+7f9d7eff9000-7f9d7f0f6000 r-xp 00000000 fe:00 2366257                    /usr/lib/libm-2.17.so
+7f9d7f0f6000-7f9d7f2f5000 ---p 000fd000 fe:00 2366257                    /usr/lib/libm-2.17.so
+7f9d7f2f5000-7f9d7f2f6000 r--p 000fc000 fe:00 2366257                    /usr/lib/libm-2.17.so
+7f9d7f2f6000-7f9d7f2f7000 rw-p 000fd000 fe:00 2366257                    /usr/lib/libm-2.17.so
+7f9d7f2f7000-7f9d7f3dd000 r-xp 00000000 fe:00 2366164                    /usr/lib/libstdc++.so.6.0.18
+7f9d7f3dd000-7f9d7f5dc000 ---p 000e6000 fe:00 2366164                    /usr/lib/libstdc++.so.6.0.18
+7f9d7f5dc000-7f9d7f5e4000 r--p 000e5000 fe:00 2366164                    /usr/lib/libstdc++.so.6.0.18
+7f9d7f5e4000-7f9d7f5e6000 rw-p 000ed000 fe:00 2366164                    /usr/lib/libstdc++.so.6.0.18
+7f9d7f5e6000-7f9d7f5fb000 rw-p 00000000 00:00 0 
+7f9d7f5fb000-7f9d800dc000 r-xp 00000000 fe:00 3558                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/server/libjvm.so
+7f9d800dc000-7f9d802db000 ---p 00ae1000 fe:00 3558                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/server/libjvm.so
+7f9d802db000-7f9d8038f000 rw-p 00ae0000 fe:00 3558                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/server/libjvm.so
+7f9d8038f000-7f9d803bd000 rw-p 00000000 00:00 0 
+7f9d803bd000-7f9d803d2000 r-xp 00000000 fe:00 2365947                    /usr/lib/libz.so.1.2.8
+7f9d803d2000-7f9d805d1000 ---p 00015000 fe:00 2365947                    /usr/lib/libz.so.1.2.8
+7f9d805d1000-7f9d805d2000 r--p 00014000 fe:00 2365947                    /usr/lib/libz.so.1.2.8
+7f9d805d2000-7f9d805d3000 rw-p 00015000 fe:00 2365947                    /usr/lib/libz.so.1.2.8
+7f9d805d3000-7f9d80776000 r-xp 00000000 fe:00 2364976                    /usr/lib/libc-2.17.so
+7f9d80776000-7f9d80976000 ---p 001a3000 fe:00 2364976                    /usr/lib/libc-2.17.so
+7f9d80976000-7f9d8097a000 r--p 001a3000 fe:00 2364976                    /usr/lib/libc-2.17.so
+7f9d8097a000-7f9d8097c000 rw-p 001a7000 fe:00 2364976                    /usr/lib/libc-2.17.so
+7f9d8097c000-7f9d80980000 rw-p 00000000 00:00 0 
+7f9d80980000-7f9d80983000 r-xp 00000000 fe:00 2366019                    /usr/lib/libdl-2.17.so
+7f9d80983000-7f9d80b82000 ---p 00003000 fe:00 2366019                    /usr/lib/libdl-2.17.so
+7f9d80b82000-7f9d80b83000 r--p 00002000 fe:00 2366019                    /usr/lib/libdl-2.17.so
+7f9d80b83000-7f9d80b84000 rw-p 00003000 fe:00 2366019                    /usr/lib/libdl-2.17.so
+7f9d80b84000-7f9d80b91000 r-xp 00000000 fe:00 3561                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/jli/libjli.so
+7f9d80b91000-7f9d80d90000 ---p 0000d000 fe:00 3561                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/jli/libjli.so
+7f9d80d90000-7f9d80d91000 rw-p 0000c000 fe:00 3561                       /usr/lib/jvm/java-7-openjdk/jre/lib/amd64/jli/libjli.so
+7f9d80d91000-7f9d80da8000 r-xp 00000000 fe:00 2365085                    /usr/lib/libpthread-2.17.so
+7f9d80da8000-7f9d80fa7000 ---p 00017000 fe:00 2365085                    /usr/lib/libpthread-2.17.so
+7f9d80fa7000-7f9d80fa8000 r--p 00016000 fe:00 2365085                    /usr/lib/libpthread-2.17.so
+7f9d80fa8000-7f9d80fa9000 rw-p 00017000 fe:00 2365085                    /usr/lib/libpthread-2.17.so
+7f9d80fa9000-7f9d80fad000 rw-p 00000000 00:00 0 
+7f9d80fad000-7f9d80fce000 r-xp 00000000 fe:00 2366213                    /usr/lib/ld-2.17.so
+7f9d80fce000-7f9d80fd0000 r--s 00006000 fe:00 1575380                    /home/minecraft/FTB/Damascus_Homeworld/libraries/net/minecraft/launchwrapper/1.8/launchwrapper-1.8.jar
+7f9d80fd0000-7f9d8103c000 rw-p 00000000 00:00 0 
+7f9d8103c000-7f9d810bb000 rw-p 00000000 00:00 0 
+7f9d810bb000-7f9d810be000 ---p 00000000 00:00 0 
+7f9d810be000-7f9d811c0000 rw-p 00000000 00:00 0                          [stack:24243]
+7f9d811c0000-7f9d811c3000 r--s 0000f000 fe:00 3514                       /usr/lib/jvm/java-7-openjdk/jre/lib/ext/pulse-java.jar
+7f9d811c3000-7f9d811cb000 rw-s 00000000 00:1d 849967                     /tmp/hsperfdata_root/24242
+7f9d811cb000-7f9d811cc000 rw-p 00000000 00:00 0 
+7f9d811cc000-7f9d811cd000 ---p 00000000 00:00 0 
+7f9d811cd000-7f9d811ce000 rw-p 00000000 00:00 0 
+7f9d811ce000-7f9d811cf000 r--p 00021000 fe:00 2366213                    /usr/lib/ld-2.17.so
+7f9d811cf000-7f9d811d0000 rw-p 00022000 fe:00 2366213                    /usr/lib/ld-2.17.so
+7f9d811d0000-7f9d811d1000 rw-p 00000000 00:00 0 
+7fff83985000-7fff839a6000 rw-p 00000000 00:00 0                          [stack]
+7fff839fe000-7fff83a00000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Xmx2000M -XX:PermSize=128M 
+java_command: server.jar nogui
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl
+USERNAME=root
+SHELL=/bin/bash
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x918960], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x918960], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x796090], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: SIG_IGN, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGXFSZ: [libjvm.so+0x796090], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x796090], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x795f30], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x796110], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x796110], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x796110], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x796110], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Linux
+uname:Linux 3.8.4-1-ARCH #1 SMP PREEMPT Wed Mar 20 22:10:25 CET 2013 x86_64
+libc:glibc 2.17 NPTL 2.17 
+rlimit: STACK 8192k, CORE 0k, NPROC 15925, NOFILE 4096, AS infinity
+load average:0.79 0.58 0.53
+
+/proc/meminfo:
+MemTotal:        2054660 kB
+MemFree:           64280 kB
+Buffers:             184 kB
+Cached:             5072 kB
+SwapCached:            0 kB
+Active:          1909844 kB
+Inactive:           4860 kB
+Active(anon):    1909648 kB
+Inactive(anon):      280 kB
+Active(file):        196 kB
+Inactive(file):     4580 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:       1909524 kB
+Mapped:             1800 kB
+Shmem:               356 kB
+Slab:              18108 kB
+SReclaimable:       8416 kB
+SUnreclaim:         9692 kB
+KernelStack:        1304 kB
+PageTables:        14368 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     1027328 kB
+Committed_AS:    2588368 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:        3748 kB
+VmallocChunk:   34359731031 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:    821248 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:        8180 kB
+DirectMap2M:     2088960 kB
+
+
+CPU:total 2 (1 cores per cpu, 1 threads per core) family 6 model 2 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, popcnt, tsc
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 2
+model name	: QEMU Virtual CPU version 1.0
+stepping	: 3
+microcode	: 0x1
+cpu MHz		: 2299.998
+cache size	: 4096 KB
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 4
+wp		: yes
+flags		: fpu de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pse36 clflush mmx fxsr sse sse2 syscall nx lm rep_good nopl pni vmx cx16 popcnt hypervisor lahf_lm
+bogomips	: 4601.66
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 2
+model name	: QEMU Virtual CPU version 1.0
+stepping	: 3
+microcode	: 0x1
+cpu MHz		: 2299.998
+cache size	: 4096 KB
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 4
+wp		: yes
+flags		: fpu de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pse36 clflush mmx fxsr sse sse2 syscall nx lm rep_good nopl pni vmx cx16 popcnt hypervisor lahf_lm
+bogomips	: 4601.66
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 2054660k(64280k free), swap 0k(0k free)
+
+vm_info: OpenJDK 64-Bit Server VM (24.45-b08) for linux-amd64 JRE (1.7.0_51-b00), built on Jan 16 2014 12:40:49 by "nobody" with gcc 4.8.2 20131219 (prerelease)
+
+time: Fri Feb 28 13:29:29 2014
+elapsed time: 124996 seconds
+

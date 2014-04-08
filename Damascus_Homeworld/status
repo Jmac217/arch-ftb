@@ -1,0 +1,18 @@
+#!/bin/bash
+
+clear 
+
+echo "Directories"
+echo "==========="
+ls -d --color=auto */ 
+
+echo ""
+echo "Files"
+echo "====="
+for f in *; do [[ -f "$f" ]] && ls -- "$f"; done
+
+echo ""
+echo "Scripts"
+echo "======="
+ls --color=auto backup clean start status userlog
+echo ""

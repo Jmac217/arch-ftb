@@ -1,0 +1,6 @@
+2014-01-23 19:45:09.543455|INFO    |ServerLibPriv |   | TeamSpeak 3 Server 3.0.10.3 (2014-01-01 16:28:39)
+2014-01-23 19:45:09.543735|INFO    |ServerLibPriv |   | SystemInformation: Linux 3.8.4-1-ARCH #1 SMP PREEMPT Wed Mar 20 22:10:25 CET 2013 x86_64 Binary: 64bit
+2014-01-23 19:45:09.545338|INFO    |DatabaseQuery |   | dbPlugin name:    SQLite3 plugin, Version 2, (c)TeamSpeak Systems GmbH
+2014-01-23 19:45:09.545448|INFO    |DatabaseQuery |   | dbPlugin version: 3.7.3
+2014-01-23 19:45:09.546094|INFO    |DatabaseQuery |   | checking database integrity (may take a while)
+2014-01-23 19:45:09.549249|CRITICAL|DatabaseQuery |   | setSQLfromFile( file:sql/create_sqlite//create_tables.sql) failed
